@@ -45,7 +45,13 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
 
 //let Content = [];
 
-let Content =JSON.stringify([Content0+"aa"]);
+      getuid();
+      
+      
+      
+      
+      
+let Content =JSON.stringify([Content0+"aa"+uid]);
 
 
       //データがJSONかどうかのチェック
@@ -60,7 +66,6 @@ let Content =JSON.stringify([Content0+"aa"]);
        }
 
      }
-
 
 
 
@@ -106,7 +111,21 @@ let Content =JSON.stringify([Content0+"aa"]);
 //function clearTextarea() {
 //	var textareaForm = document.getElementById("textArea");
 // textareaForm.value = '';}
+    
+    
 
+  function getuid() {             
+       
+   liff.getProfile()
+  .then((profile) => {
+    let dsp_name = profile.displayName;
+    let uid = profile.userId;
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
+       return uid;     
+   }
 
 
 
