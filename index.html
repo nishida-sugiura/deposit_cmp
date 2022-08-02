@@ -35,7 +35,47 @@ const END_POINT = "https://script.google.com/macros/s/AKfycbz8JHquRmL040htzMZYTB
 
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+         
+function getuid() 
+
+    // get profile call
+    document.getElementById('postButton').addEventListener('click', function() {
+        liff.getProfile().then(function(profile) {            
+let dsp_name = profile.displayName;
+const uid = profile.userId;        
+
+
+
+        })
+    });
+}
+
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function postToGAS() {
+      
+      
+      
 
    
       const Content0 = document.getElementById("textArea").value.trim();
@@ -43,7 +83,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycbz8JHquRmL040htzMZYTB
 
 //let Content = [];
 
-let Content =JSON.stringify([Content0]);
+let Content =JSON.stringify([Content0+uid]);
 
 
       //データがJSONかどうかのチェック
