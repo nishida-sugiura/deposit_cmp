@@ -14,7 +14,7 @@
 
   <textarea id="textArea" rows="1" cols="12"></textarea>
 
-   <button id="postButton" onclick="">ABC送信する</button>
+   <button id="postButton" onclick="">ABCp送信する</button>
   <br>
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -74,14 +74,14 @@ liff
     console.log("error", err);
   });
       
-
+let aa=sayu;
    
       const Content0 = document.getElementById("textArea").value.trim();
       console.log(Content0);
 
 //let Content = [];
 
-let Content =JSON.stringify([Content0+uid]);
+let Content =JSON.stringify([Content0+aa]);
 
 
       //データがJSONかどうかのチェック
