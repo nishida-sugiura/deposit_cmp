@@ -7,7 +7,7 @@
   <title>Get/Post with Google SpreadSheet</title>
 </head>
 <body>
-  <p>デポジット用のIDを入力してください。AAllllSPP<br></p>
+  <p>デポジット用のIDを入力してください。ZZAP<br></p>
 
 
 
@@ -45,13 +45,32 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
 
 //let Content = [];
 
-  //    getuid();
       
       
       
       
       
-let Content =JSON.stringify([Content0]);
+      
+      
+if (!liff.isLoggedIn()) {
+  liff.login({ redirectUri: "https://nishida-sugiura.github.io/starter/" });
+}
+      
+   liff.getProfile()
+  .then((profile) => {
+    let dsp_name = profile.displayName;
+    let uid = profile.userId;
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
+      
+      
+     
+      
+      
+      
+let Content =JSON.stringify([Content0+uid]);
 
 
       //データがJSONかどうかのチェック
@@ -114,19 +133,19 @@ let Content =JSON.stringify([Content0]);
     
     
 
-  function getuid() {             
+ // function getuid() {             
        
-   liff.getProfile()
-  .then((profile) => {
-    let dsp_name = profile.displayName;
-    let uid = profile.userId;
-     let saya = "saya"
-  })
-  .catch((err) => {
-    console.log("error", err);
-  });
-       return saya;     
-   }
+ //  liff.getProfile()
+ // .then((profile) => {
+ //   let dsp_name = profile.displayName;
+ //   let uid = profile.userId;
+ //    let saya = "saya"
+ // })
+ // .catch((err) => {
+ //   console.log("error", err);
+ // });
+ //      return saya;     
+ //  }
 
 
 
