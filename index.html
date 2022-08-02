@@ -5,9 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get/Post with Google SpreadSheet</title>
+
+
+
+
+
+
 </head>
+
+
+
+
 <body>
-  <p>デポジット用のIDを入力してください。ZZAP<br></p>
+
+
+
+
+
+
+
+
+  <p>デポジット用のIDを入力してください。<br></p>
 
 
 
@@ -31,32 +49,33 @@
     //GAS WebアプリのURL
 
 //const END_POINT ="https://script.google.com/macros/s/AKfycbzaxbellO8xgR3KCMqzfLkzYpg8ZC-mJbodMkDiTh9fJyujdy59zhxirp0FAkvzTE3F/exec";
-
-const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqglSPfqOwK4R43ju2qu5-PcqVsfByfd1uAPB2bLUctZrWwZU7/exec";
+//const END_POINT ="https://script.google.com/macros/s/AKfycbyi7FPkq4K-kCxY1Vr6KKAIhKp9_pjPMx35ZF0Td3UH872q1WgA-yTuJam5DJs-OeGa/exec";
+const END_POINT = "https://script.google.com/macros/s/AKfycbz8JHquRmL040htzMZYTBhNtWeP8KOaOkYGWN1ZdJE-NOTXrDxINsuw8155hertjx4c/exec";
 
     //読み書きするスプレッドシート（タブ）の番号
     const SHEET_NO = 1; 
     document.getElementById("postButton").addEventListener('click', postToGAS, false);
     document.getElementById("getButton").addEventListener('click', getFromGAS, false);
     let dataObj = {};
+
+
+
     function postToGAS() {
+
+      
+
+
+
+
+
+
+
       const Content0 = document.getElementById("textArea").value.trim();
       console.log(Content0);
 
 //let Content = [];
 
-      
-      
-      
-      
-      
-      
-  
-     
-      
-      
-      
-let Content =JSON.stringify([Content0+uid]);
+let Content =JSON.stringify([Content0]);
 
 
       //データがJSONかどうかのチェック
@@ -74,16 +93,20 @@ let Content =JSON.stringify([Content0+uid]);
 
 
 
+
       catch (e) {
         alert("error:" + e);
         return;
       }
+
+
+
       //POST送信
       $.ajax({
         type: "POST",
         url: END_POINT,
         dataType: "json",
-        data: { sheetNo: SHEET_NO, data: Content }
+        data: { data: Content }
       })
         .then(
           (result) => { // 成功した時の処理
@@ -116,22 +139,7 @@ let Content =JSON.stringify([Content0+uid]);
 //function clearTextarea() {
 //	var textareaForm = document.getElementById("textArea");
 // textareaForm.value = '';}
-    
-    
 
- // function getuid() {             
-       
- //  liff.getProfile()
- // .then((profile) => {
- //   let dsp_name = profile.displayName;
- //   let uid = profile.userId;
- //    let saya = "saya"
- // })
- // .catch((err) => {
- //   console.log("error", err);
- // });
- //      return saya;     
- //  }
 
 
 
