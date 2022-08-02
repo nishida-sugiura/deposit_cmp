@@ -46,17 +46,6 @@ const END_POINT = "https://script.google.com/macros/s/AKfycbz8JHquRmL040htzMZYTB
     
 
 
-    // get profile call
-   
-        liff.getProfile().then(function(profile) {            
-let dsp_name = profile.displayName;
-const uid = profile.userId;        
-
-
-
-        })
-    
-
  
     
     
@@ -72,6 +61,18 @@ const uid = profile.userId;
     function postToGAS() {
       
       
+    
+
+    // get profile call
+   
+liff
+  .getProfile()
+  .then((profile) => {
+    const uid = profile.userId;
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
       
 
    
