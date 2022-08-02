@@ -51,21 +51,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
       
       
       
-      
-if (!liff.isLoggedIn()) {
-  liff.login({ redirectUri: "https://nishida-sugiura.github.io/starter/" });
-}
-      
-   liff.getProfile()
-  .then((profile) => {
-    let dsp_name = profile.displayName;
-    let uid = profile.userId;
-  })
-  .catch((err) => {
-    console.log("error", err);
-  });
-      
-      
+  
      
       
       
