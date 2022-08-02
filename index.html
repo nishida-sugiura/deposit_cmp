@@ -51,7 +51,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
       
       
       
-let Content =JSON.stringify([Content0+"aa"]);
+let Content =JSON.stringify([Content0+saya]);
 
 
       //データがJSONかどうかのチェック
@@ -120,6 +120,7 @@ let Content =JSON.stringify([Content0+"aa"]);
   .then((profile) => {
     let dsp_name = profile.displayName;
     let uid = profile.userId;
+     let saya = "saya"
   })
   .catch((err) => {
     console.log("error", err);
