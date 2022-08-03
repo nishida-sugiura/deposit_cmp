@@ -57,7 +57,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
   //  const dsp_name = profile.displayName;
       let dsp_name="yuri" 
       
-       postToGAS()
+       postToGAS(dsp_name)
   //})
  
     
@@ -68,7 +68,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
     
     
     
-    function postToGAS(dis_name) {
+    function postToGAS(dsp_name) {
       const Content0 = document.getElementById("textArea").value.trim();
       console.log(Content0);
 
