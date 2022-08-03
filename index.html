@@ -51,16 +51,17 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
 
     function getuId(){
     
-  //   liff
-  //.getProfile()
-  //.then((profile) => {
-  //  const dsp_name = profile.displayName;
-      let dsp_name="yuri" 
-      
-       postToGAS(dsp_name)
-  //})
- 
+      liff
+  .getProfile()
+  .then((profile) => {
+    const dsp_name = profile.displayName;
+           postToGAS(dsp_name)  
     
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
+
     }
     
     
