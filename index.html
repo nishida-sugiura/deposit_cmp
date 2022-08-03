@@ -9,7 +9,7 @@
   <title>Get/Post with Google SpreadSheet</title>
 </head>
 <body>
-  <p>デポジット用のIDを入力してください。ZZAP<br></p>
+  <p>PPデポジット用のIDを入力してください。ZZAP<br></p>
 
 
 
@@ -63,9 +63,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
     let dataObj = {};
 
     
-    * Initialize LIFF
-* @param {string} myLiffId The LIFF ID of the selected element
-*/
+    
 function initializeLiff() {
     liff
         .init({
@@ -81,9 +79,7 @@ function initializeLiff() {
 }
 
     
- /**
-* Register event handlers for the buttons displayed in the app
-*/
+
 function registerButtonHandlers() {
 
 
@@ -94,7 +90,7 @@ function registerButtonHandlers() {
             
 let dsp_name = profile.displayName;
 const uid = profile.userId;   
-   postToGAS(dsp_name)         
+   postToGAS(uid)         
 
         })
     });
@@ -103,7 +99,7 @@ const uid = profile.userId;
 
     
     
-    function postToGAS(dsp_name) {
+    function postToGAS(uid) {
       const Content0 = document.getElementById("textArea").value.trim();
       console.log(Content0);
 
@@ -119,7 +115,7 @@ const uid = profile.userId;
       
       
 //let Content =JSON.stringify([Content0]);     
-let Content =JSON.stringify([Content0+dsp_name]);
+let Content =JSON.stringify([Content0+uid]);
 
 
 
