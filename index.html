@@ -54,13 +54,10 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
       liff
   .getProfile()
   .then((profile) => {
-    const dsp_name = profile.displayName;
+    let dsp_name = profile.displayName;
            postToGAS(dsp_name)  
     
   })
-  .catch((err) => {
-    console.log("error", err);
-  });
 
     }
     
