@@ -23,7 +23,7 @@
 
 
 
-   <button id="postButton" onclick="">qqqqqq送信する</button>
+   <button id="postButton" onclick="">XXXXXXXX送信する</button>
   <br>
  
 
@@ -58,7 +58,10 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
            postToGAS(dsp_name)  
     
   })
-
+ .catch((err) => {
+    console.log("error", err);
+  });
+      
     }
     
     
