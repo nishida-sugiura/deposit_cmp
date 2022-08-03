@@ -57,7 +57,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
   //  const dsp_name = profile.displayName;
       let dis_name="yuri" 
       
-       postToGAS()
+       postToGAS(dis_name)
   //})
  
     
@@ -68,7 +68,7 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
     
     
     
-    function postToGAS() {
+    function postToGAS(dis_name) {
       const Content0 = document.getElementById("textArea").value.trim();
       console.log(Content0);
 
@@ -83,8 +83,8 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
       
       
       
-let Content =JSON.stringify([Content0]);     
-//let Content =JSON.stringify([Content0+dsp_name]);
+//let Content =JSON.stringify([Content0]);     
+let Content =JSON.stringify([Content0+dsp_name]);
 
 
 
