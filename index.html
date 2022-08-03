@@ -22,7 +22,7 @@
 
 
 
-   <button id="postButton" onclick="">aaa送信する</button>
+   <button id="postButton" onclick="">bbb送信する</button>
   <br>
  
 
@@ -32,16 +32,7 @@
   <script>
 
           
-  liff
-  .getProfile()
-  .then((profile) => {
-    const dsp_name = profile.displayName;
-  })
-  .catch((err) => {
-    console.log("error", err);
-  });
-    
-    
+
     
     
     //GAS WebアプリのURL
@@ -52,10 +43,26 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
 
     //読み書きするスプレッドシート（タブ）の番号
     const SHEET_NO = 1; 
-    document.getElementById("postButton").addEventListener('click', postToGAS, false);
- //   document.getElementById("postButton").addEventListener('click', postToGAS, false);
+  //   document.getElementById("postButton").addEventListener('click', postToGAS, false);
+   document.getElementById("postButton").addEventListener('click', getuId, false);
     let dataObj = {};
     
+    
+    
+    function getuId(){
+    
+     liff
+  .getProfile()
+  .then((profile) => {
+    const dsp_name = profile.displayName;
+       
+       postToGAS()
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
+    
+    }
     
     
 
