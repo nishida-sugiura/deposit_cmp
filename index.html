@@ -40,12 +40,35 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
 
     //読み書きするスプレッドシート（タブ）の番号
     const SHEET_NO = 1; 
-    document.getElementById("postButton").addEventListener('click', postToGAS, false);
-    
+ //   document.getElementById("postButton").addEventListener('click', postToGAS, false);
+  document.getElementById("getButton").addEventListener('click', getuId, false);
     
   //  document.getElementById("getButton").addEventListener('click', getFromGAS, false);
     let dataObj = {};
 
+    
+    
+
+    function getuId(){
+    
+     liff
+  .getProfile()
+  .then((profile) => {
+    const dsp_name = profile.displayName;
+       
+       postToGAS()
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
+    
+    }
+    
+    
+    
+    
+    
+    
     function postToGAS() {
       const Content0 = document.getElementById("textArea").value.trim();
       console.log(Content0);
@@ -61,8 +84,8 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
       
       
       
-let Content =JSON.stringify([Content0]);     
-//let Content =JSON.stringify([Content0]);
+//let Content =JSON.stringify([Content0]);     
+let Content =JSON.stringify([Content0+dsp_name]);
 
 
 
