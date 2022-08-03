@@ -51,16 +51,14 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
 
     function getuId(){
     
-     liff
-  .getProfile()
-  .then((profile) => {
-    const dsp_name = profile.displayName;
+  //   liff
+  //.getProfile()
+  //.then((profile) => {
+  //  const dsp_name = profile.displayName;
        
        postToGAS()
   })
-  .catch((err) => {
-    console.log("error", err);
-  });
+ 
     
     }
     
@@ -84,8 +82,8 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
       
       
       
-//let Content =JSON.stringify([Content0]);     
-let Content =JSON.stringify([Content0+dsp_name]);
+let Content =JSON.stringify([Content0]);     
+//let Content =JSON.stringify([Content0+dsp_name]);
 
 
 
