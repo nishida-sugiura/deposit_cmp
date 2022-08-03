@@ -63,45 +63,44 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
     let dataObj = {};
 
     
-    
+    * Initialize LIFF
+* @param {string} myLiffId The LIFF ID of the selected element
+*/
+function initializeLiff() {
+    liff
+        .init({
+            liffId: 1657198553-M8zND8nk
+        })
+        .then(() => {
+            // start to use LIFF's api
+            registerButtonHandlers();
+        })
+        .catch((err) => {
+  
+        });
+}
 
-    function getuId(){
-      
-  liff
-  .init({
-    liffId: "1657198553-M8zND8nk", // Use own liffId
-  })
-  .then(() => {
-    // Start to use liff's api
-  })
-  .catch((err) => {
-    // Error happens during initialization
-    console.log(err.code, err.message);
-  }); 
     
-      
-      
-      
-      
-      
-      
-    
-      liff
-  .getProfile()
-  .then((profile) => {
-    let dsp_name = profile.displayName;
-           postToGAS(dsp_name)  
-    
-  })
- .catch((err) => {
-    console.log("error", err);
-  });
-      
-    }
-    
-    
-    
-    
+ /**
+* Register event handlers for the buttons displayed in the app
+*/
+function registerButtonHandlers() {
+
+
+
+    // get profile call
+    document.getElementById('getProfileButton').addEventListener('click', function() {
+        liff.getProfile().then(function(profile) {
+            
+let dsp_name = profile.displayName;
+const uid = profile.userId;   
+   postToGAS(dsp_name)         
+
+        })
+    });
+}
+
+
     
     
     function postToGAS(dsp_name) {
