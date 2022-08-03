@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -22,7 +23,7 @@
 
 
 
-   <button id="postButton" onclick="">ccc送信する</button>
+   <button id="postButton" onclick="">送信する</button>
   <br>
  
 
@@ -31,10 +32,6 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script>
 
-          
-
-    
-    
     //GAS WebアプリのURL
 
 //const END_POINT ="https://script.google.com/macros/s/AKfycbzaxbellO8xgR3KCMqzfLkzYpg8ZC-mJbodMkDiTh9fJyujdy59zhxirp0FAkvzTE3F/exec";
@@ -43,37 +40,51 @@ const END_POINT = "https://script.google.com/macros/s/AKfycby4ibg1Y_JZv7yPMPjqgl
 
     //読み書きするスプレッドシート（タブ）の番号
     const SHEET_NO = 1; 
-   document.getElementById("postButton").addEventListener('click', postToGAS, false);
-    // document.getElementById("postButton").addEventListener('click', getuId, false);
+    document.getElementById("postButton").addEventListener('click', postToGAS, false);
+    
+    
+  //  document.getElementById("getButton").addEventListener('click', getFromGAS, false);
     let dataObj = {};
-    
-    
-    
-    
 
     function postToGAS() {
-      
-
-      
-      
-      
       const Content0 = document.getElementById("textArea").value.trim();
       console.log(Content0);
 
 //let Content = [];
 
-let Content =JSON.stringify([Content0]);
-//let Content =JSON.stringify([Content0+dsp_name]);
+      
+      
+      
+      
+      
+      
+      
+      
+      
+let Content =JSON.stringify([Content0]);     
+//let Content =JSON.stringify([Content0]);
+
+
 
       //データがJSONかどうかのチェック
       try {
        const checkJSON = JSON.parse(Content);
      
 
- if (checkJSON.length > 0 && Object.keys(checkJSON).length > 0) { console.log("data is OK"); } else {throw "data is not array of object";}}
- catch (e) { alert("error:" + e); return;  }
-      
-      
+ if (checkJSON.length > 0 && Object.keys(checkJSON).length > 0) {
+        console.log("data is OK");
+       } else {
+         throw "data is not array of object";
+       }
+
+     }
+
+
+
+      catch (e) {
+        alert("error:" + e);
+        return;
+      }
       //POST送信
       $.ajax({
         type: "POST",
@@ -97,9 +108,13 @@ let Content =JSON.stringify([Content0]);
 
 
 
+
+
   </script>
 
 </body>
 </html>
+
+
 
 
